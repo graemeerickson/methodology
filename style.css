@@ -1,0 +1,43 @@
+body {
+   font-family: 'Roboto', sans-serif;;
+   width: 780px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+h1, h2, h3 {
+   color: rgb(39, 114, 232);
+}
+
+h1 {
+   font-size: 64px;
+}
+
+h2 {
+   font-size: 32px;
+}
+
+h3 {
+   font-size: 24px;
+}
+
+.subheading {
+   margin-top: -15px;
+}
+
+.card {
+   height: 350px;
+   width: 600px;
+   margin: 75px auto;
+   border: 1px solid black;
+   vertical-align: middle;
+   border-radius: 10px;
+}
+
+.card:hover {
+   cursor: pointer;
+}
+
+.flashcard-word {
+   padding: 120px;
+}
