@@ -2,7 +2,7 @@ const card = [
    {
       methodName: "replace()",
       objectType: "array",
-      purpose: "sample purpose",
+      purpose: "Change the contents of an array by removing existing elements and/or adding new elements.",
       parameters: "sample parameter",
       impactsObject: "yes"
    },
@@ -15,16 +15,18 @@ const card = [
    }
 ];
 
-// const cardInPlay = [];
+let flashCard = card[Math.floor(Math.random() * card.length)];
 
-const clearCard = (currCard) => {
-   while (currCard.firstChild) {
-      currCard.removeChild(currCard.firstChild);
+const clearCard = () => {
+   let cardElement = document.getElementById('card');
+   while (cardElement.firstChild) {
+      cardElement.removeChild(cardElement.firstChild);
    };
 };
 
-const scenario = (currCard) => {
-   if (currCard.childElementCount === 1) {
+const getScenario = () => {
+   let cardElement = document.getElementById('card');
+   if (cardElement.childElementCount === 1) {
       return 'front of card';
    } else {
       return 'back of card';
@@ -33,66 +35,62 @@ const scenario = (currCard) => {
 
 const showFrontOfCard = (currCard) => {
    let methodName = document.createElement('h3');
-   
    methodName.setAttribute('id','flashcard-word');
    methodName.setAttribute('class','flashcard-word');
-   methodName.innerHTML = 'splice()';
-   currCard.appendChild(methodName);
-}
+   methodName.innerHTML = `${currCard.methodName}`;
+   document.getElementById('card').appendChild(methodName);
+};
 
 const showBackOfCard = (currCard) => {
    let methodName = document.createElement('p');
    methodName.setAttribute('id','flashcard-info');
    methodName.setAttribute('class','flashcard-info');
-   methodName.innerHTML = 'Method name: splice()';
-   currCard.appendChild(methodName);
+   methodName.innerHTML = `Method name: ${currCard.methodName}`;
+   document.getElementById('card').appendChild(methodName);
 
    let objectType = document.createElement('p');
    objectType.setAttribute('id','flashcard-info');
    objectType.setAttribute('class','flashcard-info');
-   objectType.innerHTML = 'Object type: array';
-   currCard.appendChild(objectType);
+   objectType.innerHTML = `Object type: ${currCard.objectType}`;
+   document.getElementById('card').appendChild(objectType);
 
    let purpose = document.createElement('p');
    purpose.setAttribute('id','flashcard-info');
    purpose.setAttribute('class','flashcard-info');
-   purpose.innerHTML = 'Purpose: Change the contents of an array by removing existing elements and/or adding new elements.';
-   currCard.appendChild(purpose);
+   purpose.innerHTML = `Purpose: ${currCard.purpose}`;
+   document.getElementById('card').appendChild(purpose);
 
    let parameters = document.createElement('p');
    parameters.setAttribute('id','flashcard-info');
    parameters.setAttribute('class','flashcard-info');
-   parameters.innerHTML = 'Parameters: ';
-   currCard.appendChild(parameters);
+   parameters.innerHTML = `Parameters: ${currCard.parameters}`;
+   document.getElementById('card').appendChild(parameters);
 
    let impactsObject = document.createElement('p');
    impactsObject.setAttribute('id','flashcard-info');
    impactsObject.setAttribute('class','flashcard-info');
-   impactsObject.innerHTML = 'Impacts object: Yes';
-   currCard.appendChild(impactsObject);
-}
+   impactsObject.innerHTML = `Impacts object: ${currCard.impactsObject}`;
+   document.getElementById('card').appendChild(impactsObject);
+};
 
 const flipCard = () => {
-   let flashCard = document.getElementById('card');
-   let methodName;
-   switch (scenario(flashCard)) {
+   switch (getScenario()) {
       case 'front of card':
-         clearCard(flashCard);
+         clearCard();
          showBackOfCard(flashCard);
          break;
       case 'back of card':
-         clearCard(flashCard);
+         clearCard();
+         flashCard = card[Math.floor(Math.random() * card.length)];
          showFrontOfCard(flashCard);
          break;
    };
 };
 
 const showInitialCard = () => {
-   let flashCard = document.getElementById('card');
-
+   let cardElement = document.getElementById('card');
    showFrontOfCard(flashCard);
-
-   flashCard.addEventListener('click',flipCard);
+   cardElement.addEventListener('click',flipCard);
 };
 
 showInitialCard();
