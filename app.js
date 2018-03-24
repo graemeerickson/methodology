@@ -1,20 +1,3 @@
-const card = [
-   {
-      methodName: "replace()",
-      objectType: "array",
-      purpose: "Change the contents of an array by removing existing elements and/or adding new elements.",
-      parameters: "sample parameter",
-      impactsObject: "yes"
-   },
-   {
-      methodName: "map()",
-      objectType: "array",
-      purpose: "sample purpose",
-      parameters: "sample parameter",
-      impactsObject: "no"
-   }
-];
-
 let flashCard = card[Math.floor(Math.random() * card.length)];
 
 const clearCard = () => {
@@ -88,8 +71,8 @@ const flipCard = () => {
 };
 
 const showInitialCard = () => {
-   let cardElement = document.getElementById('card');
    showFrontOfCard(flashCard);
+   let cardElement = document.getElementById('card');
    cardElement.addEventListener('click',flipCard);
 };
 
