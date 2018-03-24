@@ -16,7 +16,7 @@ const getScenario = () => {
    };
 };
 
-const showFrontOfCard = (currCard) => {
+const showCardFront = (currCard) => {
    let methodName = document.createElement('h3');
    methodName.setAttribute('id','flashcard-word');
    methodName.setAttribute('class','flashcard-word');
@@ -24,7 +24,7 @@ const showFrontOfCard = (currCard) => {
    document.getElementById('card').appendChild(methodName);
 };
 
-const showBackOfCard = (currCard) => {
+const showCardBack = (currCard) => {
    let methodName = document.createElement('p');
    methodName.setAttribute('id','flashcard-info');
    methodName.setAttribute('class','flashcard-info');
@@ -56,22 +56,30 @@ const showBackOfCard = (currCard) => {
    document.getElementById('card').appendChild(impactsObject);
 };
 
+const checkForRepeat = () => {
+   let prevCard = flashCard;
+   while (prevCard === flashCard) {
+      flashCard = card[Math.floor(Math.random() * card.length)];
+   };
+   return flashCard;
+};
+
 const flipCard = () => {
    switch (getScenario()) {
       case 'front of card':
          clearCard();
-         showBackOfCard(flashCard);
+         showCardBack(flashCard);
          break;
       case 'back of card':
          clearCard();
-         flashCard = card[Math.floor(Math.random() * card.length)];
-         showFrontOfCard(flashCard);
+         checkForRepeat();
+         showCardFront(flashCard);
          break;
    };
 };
 
 const showInitialCard = () => {
-   showFrontOfCard(flashCard);
+   showCardFront(flashCard);
    let cardElement = document.getElementById('card');
    cardElement.addEventListener('click',flipCard);
 };
