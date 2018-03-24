@@ -23,6 +23,7 @@ h3 {
 
 .subheading {
    margin-top: -15px;
+   font-style: italic;
 }
 
 .card {
@@ -40,4 +41,10 @@ h3 {
 
 .flashcard-word {
    padding: 120px;
+}
+
+.flashcard-info {
+   text-align: left;
+   padding: 15px;
+   line-height: 20px;
 }
