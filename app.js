@@ -28,31 +28,31 @@ const showCardBack = (currCard) => {
    let methodName = document.createElement('p');
    methodName.setAttribute('id','flashcard-info');
    methodName.setAttribute('class','flashcard-info');
-   methodName.innerHTML = `Method name: ${currCard.methodName}`;
+   methodName.innerHTML = `<b>Method name:</b> ${currCard.methodName}`;
    document.getElementById('card').appendChild(methodName);
 
    let objectType = document.createElement('p');
    objectType.setAttribute('id','flashcard-info');
    objectType.setAttribute('class','flashcard-info');
-   objectType.innerHTML = `Object type: ${currCard.objectType}`;
+   objectType.innerHTML = `<b>Object type:</b> ${currCard.objectType}`;
    document.getElementById('card').appendChild(objectType);
 
    let purpose = document.createElement('p');
    purpose.setAttribute('id','flashcard-info');
    purpose.setAttribute('class','flashcard-info');
-   purpose.innerHTML = `Purpose: ${currCard.purpose}`;
+   purpose.innerHTML = `<b>Purpose:</b> ${currCard.purpose}`;
    document.getElementById('card').appendChild(purpose);
 
    let parameters = document.createElement('p');
    parameters.setAttribute('id','flashcard-info');
    parameters.setAttribute('class','flashcard-info');
-   parameters.innerHTML = `Parameters: ${currCard.parameters}`;
+   parameters.innerHTML = `<b>Parameters:</b> ${currCard.parameters}`;
    document.getElementById('card').appendChild(parameters);
 
    let impactsObject = document.createElement('p');
    impactsObject.setAttribute('id','flashcard-info');
    impactsObject.setAttribute('class','flashcard-info');
-   impactsObject.innerHTML = `Impacts object: ${currCard.impactsObject}`;
+   impactsObject.innerHTML = `<b>Impacts original object:</b> ${currCard.impactsObject}`;
    document.getElementById('card').appendChild(impactsObject);
 };
 
