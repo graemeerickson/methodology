@@ -11,14 +11,14 @@ const card = [
       methodName: "join()",
       objectType: "Array",
       purpose: "Join all array elements into a new string and insert separator between them if desired.",
-      parameters: "(1) separator",
+      parameters: "<i>(1) separator</i>",
       impactsObject: "No"
    },
    {
       methodName: "push()",
       objectType: "Array",
       purpose: "Add a new element to the end of an array.",
-      parameters: "<i>(1) element to add to the array</i>",
+      parameters: "(1) element to add to the array",
       impactsObject: "Yes"
    },
    {
