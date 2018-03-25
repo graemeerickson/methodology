@@ -1,17 +1,13 @@
 let flashCard = card[Math.floor(Math.random() * card.length)];
 let flashCardHistory = [];
-flashCardHistory.push(flashCard);
-console.log(flashCardHistory);
 
-const clearCard = () => {
-   let cardElement = document.getElementById('card');
+const clearCard = (cardElement) => {
    while (cardElement.firstChild) {
       cardElement.removeChild(cardElement.firstChild);
    };
 };
 
-const getScenario = () => {
-   let cardElement = document.getElementById('card');
+const getScenario = (cardElement) => {
    if (cardElement.childElementCount === 1) {
       return 'front of card';
    } else {
@@ -19,74 +15,75 @@ const getScenario = () => {
    };
 };
 
-const showCardFront = (currCard) => {
+const showCardFront = (cardElement) => {
    let methodName = document.createElement('h3');
    methodName.setAttribute('id','flashcard-word');
    methodName.setAttribute('class','flashcard-word');
-   methodName.innerHTML = `${currCard.methodName}`;
-   document.getElementById('card').appendChild(methodName);
+   methodName.innerHTML = `${flashCard.methodName}`;
+   cardElement.appendChild(methodName);
 };
 
-const showCardBack = (currCard) => {
+const showCardBack = (cardElement) => {
    let methodName = document.createElement('p');
    methodName.setAttribute('id','flashcard-info');
    methodName.setAttribute('class','flashcard-info');
-   methodName.innerHTML = `<b>Method name:</b> ${currCard.methodName}`;
-   document.getElementById('card').appendChild(methodName);
+   methodName.innerHTML = `<b>Method name:</b> ${flashCard.methodName}`;
+   cardElement.appendChild(methodName);
 
    let objectType = document.createElement('p');
    objectType.setAttribute('id','flashcard-info');
    objectType.setAttribute('class','flashcard-info');
-   objectType.innerHTML = `<b>Object type:</b> ${currCard.objectType}`;
-   document.getElementById('card').appendChild(objectType);
+   objectType.innerHTML = `<b>Object type:</b> ${flashCard.objectType}`;
+   cardElement.appendChild(objectType);
 
    let purpose = document.createElement('p');
    purpose.setAttribute('id','flashcard-info');
    purpose.setAttribute('class','flashcard-info');
-   purpose.innerHTML = `<b>Purpose:</b> ${currCard.purpose}`;
-   document.getElementById('card').appendChild(purpose);
+   purpose.innerHTML = `<b>Purpose:</b> ${flashCard.purpose}`;
+   cardElement.appendChild(purpose);
 
    let parameters = document.createElement('p');
    parameters.setAttribute('id','flashcard-info');
    parameters.setAttribute('class','flashcard-info');
-   parameters.innerHTML = `<b>Parameters:</b> ${currCard.parameters}`;
-   document.getElementById('card').appendChild(parameters);
+   parameters.innerHTML = `<b>Parameters:</b> ${flashCard.parameters}`;
+   cardElement.appendChild(parameters);
 
    let impactsObject = document.createElement('p');
    impactsObject.setAttribute('id','flashcard-info');
    impactsObject.setAttribute('class','flashcard-info');
-   impactsObject.innerHTML = `<b>Impacts original object:</b> ${currCard.impactsObject}`;
-   document.getElementById('card').appendChild(impactsObject);
+   impactsObject.innerHTML = `<b>Impacts original object:</b> ${flashCard.impactsObject}`;
+   cardElement.appendChild(impactsObject);
 };
 
-const checkForRepeat = () => {
+const checkForRepeat = (cardHistory) => {
    let prevCard = flashCard;
    while (prevCard === flashCard) {
       flashCard = card[Math.floor(Math.random() * card.length)];
    };
-   flashCardHistory.push(flashCard);
-   return flashCard;
+   cardHistory.push(flashCard);
 };
 
-const flipCard = () => {
-   console.log(flashCardHistory);
-   switch (getScenario()) {
+const flipCard = (cardElement, cardHistory) => {
+   switch (getScenario(cardElement)) {
       case 'front of card':
-         clearCard();
-         showCardBack(flashCard);
+         clearCard(cardElement);
+         showCardBack(cardElement);
          break;
       case 'back of card':
-         clearCard();
-         checkForRepeat();
-         showCardFront(flashCard);
+         clearCard(cardElement);
+         checkForRepeat(cardHistory);
+         showCardFront(cardElement);
          break;
    };
 };
 
 const showInitialCard = () => {
-   showCardFront(flashCard);
+   flashCardHistory.push(flashCard);
    let cardElement = document.getElementById('card');
-   cardElement.addEventListener('click',flipCard);
+   showCardFront(cardElement);
+   cardElement.addEventListener('click', () => {
+      flipCard(cardElement, flashCardHistory);
+   });
 };
 
 showInitialCard();
