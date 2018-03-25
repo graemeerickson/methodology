@@ -18,7 +18,7 @@ const card = [
       methodName: "push()",
       objectType: "Array",
       purpose: "Add a new element to the end of an array.",
-      parameters: "(1) element to add to the array",
+      parameters: "<i>(1) element to add to the array</i>",
       impactsObject: "Yes"
    },
    {
@@ -45,8 +45,8 @@ const card = [
    {
       methodName: "splice()",
       objectType: "Array",
-      purpose: "Add or remove items from an array.",
-      parameters: "(1) where new element should be added, (2) number of elements to remove, (3) new element to add)",
+      purpose: "Add/remove items to/from an array.",
+      parameters: "(1) where new element should be added, <i>(2) number of elements to remove</i>, <i>(3) new element to add</i>",
       impactsObject: "Yes"
    },
    {
@@ -60,7 +60,7 @@ const card = [
       methodName: "slice()",
       objectType: "Array",
       purpose: "Slice some elements from an array into a new array.",
-      parameters: "(1) starting element, (2) number of elements to get",
+      parameters: "<i>(1) starting element</i>, <i>(2) number of elements to get</i>",
       impactsObject: "No"
    },
    {
@@ -81,14 +81,14 @@ const card = [
       methodName: "indexOf()",
       objectType: "Array",
       purpose: "Search an array for an item and returns its position. If found more than once, return its first position. Note: returns -1 if item is not found.",
-      parameters: "(1) item to search for, (2) starting point in array (optional)",
+      parameters: "(1) item to search for, <i>(2) starting point in array</i>",
       impactsObject: "No"
    },
    {
       methodName: "lastIndexOf()",
       objectType: "Array",
       purpose: "Search an array for an item and returns its position. If found more than once, return its last position. Note: returns -1 if item is not found.",
-      parameters: "(1) item to search for, (2) starting point in array (optional)",
+      parameters: "(1) item to search for, <i>(2) starting point in array</i>",
       impactsObject: "No"
    },
    {
@@ -103,35 +103,35 @@ const card = [
       methodName: "filter()",
       objectType: "Array",
       purpose: "Create a new array with every element in an array that passes a test/condition.",
-      parameters: "(1) value of the current element, (2) array index of the current element (optional), (3) array object the current element belongs to (optional)",
+      parameters: "(1) value of the current element, <i>(2) array index of the current element</i>, <i>(3) array object the current element belongs to</i>",
       impactsObject: "No"
    },
    {  
       methodName: "reduce()",
       objectType: "Array",
       purpose: "Reduce (e.g., sum) the values of an array to a single value (going left-to-right)",
-      parameters: "(1) total - initialValue or previously returned value of the function, (2) value of the current element, (3) array index of the current element (optional), (4) array object the current element belongs to (optional)",
+      parameters: "(1) total - initialValue or previously returned value of the function, (2) value of the current element, <i>(3) array index of the current element</i>, <i>(4) array object the current element belongs to</i>",
       impactsObject: "No"
    },
    {  
       methodName: "reduceRight()",
       objectType: "Array",
       purpose: "Reduce (e.g., sum) the values of an array to a single value (going right-to-left)",
-      parameters: "(1) total - initialValue or previously returned value of the function, (2) value of the current element, (3) array index of the current element (optional), array object the current element belongs to (optional)",
+      parameters: "(1) total - initialValue or previously returned value of the function, (2) value of the current element, <i>(3) array index of the current element</i>, <i>array object the current element belongs to</i>",
       impactsObject: "No"
    },
    {
       methodName: "map()",
       objectType: "Array",
       purpose: "Create a new array with the results of calling a function for every array element.",
-      parameters: "(1) value of the current element, (2) array index of the current element (optional), (3) array object the current element belongs to (optional)",
+      parameters: "(1) value of the current element, <i>(2) array index of the current element</i>, <i>(3) array object the current element belongs to</i>",
       impactsObject: "No"
    },
    {
       methodName: "forEach()",
       objectType: "Array",
       purpose: "Call a provided function once for each element in an array, in order.",
-      parameters: "(1) value of the current element, (2) array index of the current element (optional), array object the current element belongs to (optional)",
+      parameters: "(1) value of the current element, <i>(2) array index of the current element</i>, <i>array object the current element belongs to</i>",
       impactsObject: "No"
    },
    // string methods
