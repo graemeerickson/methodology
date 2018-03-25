@@ -1,8 +1,7 @@
-Sequence of events:
+Sequence of events
 
 1. Show front of flashcard.
    -Select method at random from main flashcard object.
-   -Generate card via HTML or JS?
 2. Set up event listener for a click on the flashcard.
 3. User clicks flashcard.
 4. IF front of flashcard is currently showing, then show back of flashcard using DOM manipulation:
