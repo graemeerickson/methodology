@@ -1,4 +1,7 @@
 let flashCard = card[Math.floor(Math.random() * card.length)];
+let flashCardHistory = [];
+flashCardHistory.push(flashCard);
+console.log(flashCardHistory);
 
 const clearCard = () => {
    let cardElement = document.getElementById('card');
@@ -61,10 +64,12 @@ const checkForRepeat = () => {
    while (prevCard === flashCard) {
       flashCard = card[Math.floor(Math.random() * card.length)];
    };
+   flashCardHistory.push(flashCard);
    return flashCard;
 };
 
 const flipCard = () => {
+   console.log(flashCardHistory);
    switch (getScenario()) {
       case 'front of card':
          clearCard();
