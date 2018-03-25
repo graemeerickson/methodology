@@ -12,12 +12,8 @@ h1 {
    font-size: 64px;
 }
 
-h2 {
-   font-size: 32px;
-}
-
 h3 {
-   font-size: 24px;
+   font-size: 28px;
 }
 
 p {
@@ -33,7 +29,6 @@ p {
    width: 600px;
    margin: 75px auto;
    border: 1px solid black;
-   vertical-align: middle;
    border-radius: 10px;
    padding: 35px;
    touch-action: manipulation;
@@ -52,3 +47,32 @@ p {
    padding: 15px;
    line-height: 20px;
 }
+
+/*mobile portrait mode*/
+@media screen and (max-width: 414px) {
+   h1 {
+      font-size: 48px;
+   }
+
+   h3 {
+      font-size: 22px;
+   }
+
+   .card {
+      height: 370px;
+      width: 340px;
+      margin: 40px auto;
+      padding: 0;
+   }
+
+   .flashcard-word {
+      margin-top: 40px;
+   }
+
+   .flashcard-info {
+      font-size: 14px;
+      line-height: 14px;
+   }
+}
+
+/*mobile landscape mode*/
