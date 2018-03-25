@@ -46,7 +46,7 @@ const card = [
       methodName: "splice()",
       objectType: "Array",
       purpose: "Add/remove items to/from an array.",
-      parameters: "(1) where new element should be added, <i>(2) number of elements to remove</i>, <i>(3) new element to add</i>",
+      parameters: "(1) where in array the new element should be added, <i>(2) number of elements to remove</i>, <i>(3) new element to add</i>",
       impactsObject: "Yes"
    },
    {
